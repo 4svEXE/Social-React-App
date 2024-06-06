@@ -1,0 +1,36 @@
+.link {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  color: #f5f5f5;
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  transition: width 0.3s;
+}
+
+.link:hover::before {
+  width: 80%;
+}
+
+.link:last-child {
+  opacity: 0.5;
+}
+.link::after {
+  content: attr(data-arrow);
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.link:last-child::after {
+  content: "";
+}

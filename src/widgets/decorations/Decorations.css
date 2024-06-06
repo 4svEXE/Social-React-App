@@ -1,0 +1,89 @@
+.Decorations {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  opacity: 0.5;
+  overflow: hidden;
+}
+.Decorations img {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  transform: translateY(0%);
+}
+.Decorations img:nth-child(1) {
+  right: 5%;
+  top: 130px;
+  animation: levitation 7s alternate infinite;
+}
+.Decorations img:nth-child(2) {
+  width: 115px;
+  left: 5%;
+  top: 400px;
+  animation: levitation 9s ease-in-out infinite;
+}
+.Decorations img:nth-child(3) {
+  width: 80px;
+  right: 10%;
+  top: 784.19px;
+  animation: levitation 6s ease-in-out infinite;
+}
+.Decorations img:nth-child(4) {
+  left: 7%;
+  bottom: 15%;
+  animation: levitation 8s alternate infinite;
+}
+.Decorations img:nth-child(5) {
+  width: 100px;
+  right: 11%;
+  bottom: 64px;
+  animation: levitation 5s reverse infinite;
+}
+
+@media screen and (max-width: 500px) {
+  .Decorations img:nth-child(1) {
+    opacity: 0.3;
+  }
+}
+
+@keyframes levitation {
+  0% {
+    transform: translateY(0%);
+    filter: drop-shadow(5px 30px 40px #4444dd);
+  }
+
+  50% {
+    transform: translateY(10%);
+    filter: drop-shadow(5px 40px 40px #4444dd);
+  }
+
+  100% {
+    transform: translateY(0%);
+    filter: drop-shadow(5px 30px 40px #4444dd);
+  }
+}
+
+.Decorations .blured-boxes .box-decor {
+  position: absolute;
+  border-radius: 10px;
+  z-index: -1;
+  filter: drop-shadow(5px 5px 20px 20px #4444dd);
+  transform: translateY(0%);
+
+  background: radial-gradient(
+    123.33% 119.24% at 43.19% 99.41%,
+    #1e0035 0%,
+    #2d0951 26.04%,
+    #6b0c71 100%
+  );
+  filter: blur(18px);
+  transform: rotate(-120deg);
+}
+.box-decor:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  right: 60%;
+  margin-top: 55%;
+  animation: levitation 5s reverse infinite;
+}
