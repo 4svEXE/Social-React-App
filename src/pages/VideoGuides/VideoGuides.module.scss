@@ -1,11 +1,18 @@
-.controllButton{
+.controllButton {
   margin: 30px;
-}
 
-.play{
-  background-color: red;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  border-radius: 50%;
+  .play,
+  .pause {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+
+  .play {
+    background-color: #fff;
+  }
+
+  .pause {
+    background-color: #ECECEC;
+  }
 }
