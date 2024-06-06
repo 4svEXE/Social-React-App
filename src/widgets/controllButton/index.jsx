@@ -6,22 +6,10 @@ const ControllButton = ({ onClick, percentage, children }) => {
   const progressRef = useRef(null);
 
   useEffect(() => {
-    const duration = 5000;
-
-    const animateStroke = (timestamp, start = null) => {
-      if (!start) start = timestamp;
-      const progress = Math.min((timestamp - start) / duration, 1);
-      const value = percentage;
-      if (progressRef.current) {
-        progressRef.current.style.strokeDasharray = `${value / 100 * 132}, 251.2`;
-      }
-
-      if (progress < 1) {
-        window.requestAnimationFrame((newTimestamp) => animateStroke(newTimestamp, start));
-      }
-    };
-
-    window.requestAnimationFrame(animateStroke);
+    const value = (percentage / 100) * 132;
+    if (progressRef.current) {
+      progressRef.current.style.strokeDasharray = `${value}, 251.2`;
+    }
   }, [percentage]);
 
   return (

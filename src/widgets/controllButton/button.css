@@ -18,3 +18,11 @@
     overflow: hidden;
   }
 }
+
+#animated {
+  transform: rotate(-90deg);
+}
+
+#progress {
+  transition: stroke-dasharray 0.5s ease-in-out;
+}
