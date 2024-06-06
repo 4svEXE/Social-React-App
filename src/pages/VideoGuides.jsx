@@ -15,7 +15,7 @@ export default function VideoGuidesPage() {
   ];
 
   return (
-    <div className=" w-full flex flex-col items-center justify-start bg-white dark:bg-black">
+    <div className=" w-full flex flex-col items-center justify-start bg-[#E2ECF4] dark:bg-black">
       <Breadcumbs nav={navBreadcumbs} />
       <VideoGuides />
     </div>

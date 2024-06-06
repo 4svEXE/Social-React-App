@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import styles from "./VideoGuides.module.scss";
+import s from "./VideoGuides.module.scss";
 
 import ControllButton from "widgets/controllButton";
+
+import phone from "public/img/VideoGuides/phone.png";
 
 // icons
 import play from "public/img/icons/play.svg";
@@ -61,8 +63,6 @@ export default function VideoGuides() {
       v2: videoKey === "v2" ? !currentIsPlaying : false,
       v3: videoKey === "v3" ? !currentIsPlaying : false,
     }));
-
-    console.log(isPlaying);
   };
 
   const handleTimeUpdate = (videoKey) => {
@@ -94,74 +94,83 @@ export default function VideoGuides() {
   }, []);
 
   return (
-    <div className="flex pt-10 flex-col h-max items-center bg-white text-black dark:text-white dark:bg-black py-8 bg-opacity-25">
-      <div className="w-full grid grid-cols-12 min-h-[50vh]">
-        <div className="col-span-6">
-          <div className={styles.controllButton}>
-            <ControllButton
-              onClick={() => {
-                handleButtonClick(v1, "v1");
-              }}
-              percentage={Math.floor(percentages["v1"])}
-            >
-              <img
-                src={isPlaying["v1"] ? pause : play}
-                alt="control"
-                className={isPlaying["v1"] ? styles.pause : styles.play}
-              />
-            </ControllButton>
-          </div>
+    <div className="flex pt-10 flex-col h-max items-center bg-[#E2ECF4] text-black dark:text-white dark:bg-black py-8 bg-opacity-25">
+      <div className="w-full grid grid-cols-12 gap-3 min-h-[50vh]">
+        <div className="col-span-8">
 
-          <div className={styles.controllButton}>
-            <ControllButton
-              onClick={() => {
-                handleButtonClick(v2, "v2");
-              }}
-              percentage={Math.floor(percentages["v2"])}
-            >
-              <img
-                src={isPlaying["v2"] ? pause : play}
-                alt="control"
-                className={isPlaying["v2"] ? styles.pause : styles.play}
-              />
-            </ControllButton>
-          </div>
+          <div className={s.cards + ' grid grid-cols-2 gap-3'}>
+            <div className={s.card + ' col-span-1 ' + (isPlaying["v1"] ? s.active : '')}>
+              <div className={s.controllButton}>
+                <ControllButton
+                  onClick={() => {
+                    handleButtonClick(v1, "v1");
+                  }}
+                  percentage={Math.floor(percentages["v1"])}
+                >
+                  <img
+                    src={isPlaying["v1"] ? pause : play}
+                    alt="control"
+                    className={isPlaying["v1"] ? s.pause : s.play}
+                  />
+                </ControllButton>
+              </div>
+            </div>
+
+            <div className={s.card + ' col-span-1 ' + (isPlaying["v2"] ? s.active : '')}>
+              <div className={s.controllButton}>
+                <ControllButton
+                  onClick={() => {
+                    handleButtonClick(v2, "v2");
+                  }}
+                  percentage={Math.floor(percentages["v2"])}
+                >
+                  <img
+                    src={isPlaying["v2"] ? pause : play}
+                    alt="control"
+                    className={isPlaying["v2"] ? s.pause : s.play}
+                  />
+                </ControllButton>
+              </div>
+            </div>
 
           {/* // ! step 3 */}
-          <div className={styles.controllButton}>
-            <ControllButton
-              onClick={() => {
-                handleButtonClick(v3, "v3");
-              }}
-              percentage={Math.floor(percentages["v3"])}
-            >
-              <img
-                src={isPlaying["v3"] ? pause : play}
-                alt="control"
-                className={isPlaying["v3"] ? styles.pause : styles.play}
-              />
-            </ControllButton>
+
+            <div className={s.card + ' col-span-1 ' + (isPlaying["v3"] ? s.active : '')}>
+              <div className={s.controllButton}>
+                <ControllButton
+                  onClick={() => {
+                    handleButtonClick(v3, "v3");
+                  }}
+                  percentage={Math.floor(percentages["v3"])}
+                >
+                  <img
+                    src={isPlaying["v3"] ? pause : play}
+                    alt="control"
+                    className={isPlaying["v3"] ? s.pause : s.play}
+                  />
+                </ControllButton>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="col-span-4">
+        <div className={s.videoContainer + " col-span-4"}>
+          <img src={phone} alt="phone" className={s.phone} />
+
           {/* // ! step 4 */}
           <video
             ref={videoRefs["v1"]}
             src={v1}
-            controls
             style={{ display: videoSrc === v1 ? "block" : "none" }}
           ></video>
           <video
             ref={videoRefs["v2"]}
             src={v2}
-            controls
             style={{ display: videoSrc === v2 ? "block" : "none" }}
           ></video>
           <video
             ref={videoRefs["v3"]}
             src={v3}
-            controls
             style={{ display: videoSrc === v3 ? "block" : "none" }}
           ></video>
         </div>
