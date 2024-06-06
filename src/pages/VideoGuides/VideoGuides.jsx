@@ -48,6 +48,11 @@ export default function VideoGuides() {
     } else {
       video.play();
     }
+    setIsPlaying({
+      v1: false,
+      v2: false,
+      v3: false,
+    })
     setIsPlaying({ ...isPlaying, [videoKey]: !currentIsPlaying });
   };
 
