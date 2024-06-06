@@ -94,7 +94,7 @@ export default function VideoGuides() {
   }, []);
 
   return (
-    <div className="flex pt-10 flex-col h-max items-center bg-[#E2ECF4] text-black dark:text-white dark:bg-black py-8 bg-opacity-25">
+    <section className="flex pt-10 flex-col h-max items-center bg-[#E2ECF4] text-black dark:text-white dark:bg-black py-8 bg-opacity-25">
       <div className="w-full grid grid-cols-12 gap-3 min-h-[50vh]">
         <div className="col-span-8">
 
@@ -175,6 +175,6 @@ export default function VideoGuides() {
           ></video>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
