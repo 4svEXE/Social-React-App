@@ -5,7 +5,7 @@ localesHelper.toggleLanguage = () => {
   let language = window.localStorage.getItem("i18nextLng");
 
   language === "en"
-    ? i18next.changeLanguage("uk-UA")
+    ? i18next.changeLanguage("ua")
     : i18next.changeLanguage("en");
 };
 

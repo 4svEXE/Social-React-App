@@ -6,7 +6,7 @@ import Footer from "shared/components/footer";
 
 export default function WithLayout({ children, toggleTheme }) {
   return (
-    <div className="bg-white dark:bg-black h-full">
+    <div className="bg-white dark:bg-black h-[100vh]">
       <Decorations />
 
       <Header toggleTheme={toggleTheme} />

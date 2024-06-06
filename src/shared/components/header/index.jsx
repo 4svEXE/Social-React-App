@@ -50,7 +50,7 @@ export default function Header({ toggleTheme }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <header className="bg-white border-gray-200 w-full z-20 px-4 lg:px-6 py-2.5 dark:bg-dark-gray dark:text-white">
+    <header className="bg-white border-gray-200 w-full z-20 px-4 lg:px-6 dark:bg-dark-gray dark:text-white">
       <div className="flex items-center justify-between border-b border-gray-400 py-8">
         <div className="flex flex-wrap items-center max-w-screen-xl">
           <div className="flex lg:flex-1">
