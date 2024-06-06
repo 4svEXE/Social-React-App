@@ -1,1 +1,16 @@
 @import "variables";
+
+* {
+    font-family: "JetBrains Mono", monospace;
+    position: relative;
+    z-index: 1;
+}
+
+h2 {
+    font-family: "JetBrains Mono";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 52px;
+    text-align: center;
+}

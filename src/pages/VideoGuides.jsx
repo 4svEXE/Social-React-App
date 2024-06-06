@@ -1,16 +1,19 @@
 import React from "react";
 import VideoGuides from "./VideoGuides/VideoGuides";
 import Breadcumbs from "widgets/Breadcrumbs/Breadcumbs";
+import { useTranslation } from "react-i18next";
 
 export default function VideoGuidesPage() {
+  const { t } = useTranslation();
+
   const navBreadcumbs = [
     {
       path: "/",
-      title: "Home",
+      title: t([`header.nav.Home`]),
     },
     {
       path: "#",
-      title: "VideoGuides",
+      title: t([`header.nav.Guides`]),
     },
   ];
 

@@ -1,7 +1,46 @@
 header {
-  position: sticky;
+  position: relative;
   top: 0;
+  z-index: 100;
+
+  &.hide_sticky_header {
+    animation: 0.3s ease-out 1 hide-header;
+    animation-fill-mode: forwards;
+  }
+  &.show_sticky_header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 12px 20px;
+    background-color: #fff;
+
+    animation: 0.3s ease-in 1 show-header;
+    animation-fill-mode: forwards;
+
+    .hd-wrapper{
+      padding: 0;
+    }
+  }
 }
+
+@keyframes show-header {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes hide-header {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
 .header-nav {
   position: relative;
   padding: 10px 0;

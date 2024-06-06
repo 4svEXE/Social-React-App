@@ -1,16 +1,19 @@
 import React from "react";
 import CasesContent from "./Cases/CasesContent";
 import Breadcumbs from "widgets/Breadcrumbs/Breadcumbs";
+import { useTranslation } from "react-i18next";
 
 export default function CasesPage() {
+  const { t } = useTranslation();
+
   const navBreadcumbs = [
     {
       path: "/",
-      title: "Home",
+      title: t([`header.nav.Home`]),
     },
     {
       path: "#",
-      title: "Cases",
+      title: t([`header.nav.Cases`]),
     },
   ];
 
