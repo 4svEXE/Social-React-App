@@ -1,0 +1,19 @@
+.controll-button {
+  width: 40px;
+  height: 40px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .control {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+}

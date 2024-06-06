@@ -1,63 +1,58 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+import './button.css';
 
-const ControllButton = () => {
-  const [counter, setCounter] = useState(0);
+const ControllButton = ({ onClick, percentage, children }) => {
   const progressRef = useRef(null);
 
   useEffect(() => {
-    let start = null;
-    const duration = 5000;
-    const endValue = 100;
-    
-    const step = (timestamp) => {
-      if (!start) start = timestamp;
-      const progress = Math.min((timestamp - start) / duration, 1);
-      setCounter(Math.ceil(progress * endValue));
-      
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
-    };
-
-    window.requestAnimationFrame(step);
-  }, []);
-
-  useEffect(() => {
-    let start = null;
     const duration = 5000;
     const endValue = 251.2;
-    
-    const animateStroke = (timestamp) => {
+
+    const animateStroke = (timestamp, start = null) => {
       if (!start) start = timestamp;
       const progress = Math.min((timestamp - start) / duration, 1);
-      const value = progress * endValue;
-      progressRef.current.style.strokeDasharray = `${value}, 251.2`;
+      const value = percentage;
+      if (progressRef.current) {
+        progressRef.current.style.strokeDasharray = `${value / 100 * 115}, 251.2`;
+      }
 
       if (progress < 1) {
-        window.requestAnimationFrame(animateStroke);
+        window.requestAnimationFrame((newTimestamp) => animateStroke(newTimestamp, start));
       }
     };
 
     window.requestAnimationFrame(animateStroke);
-  }, []);
+  }, [percentage]);
 
   return (
-    <div>
-      <div id="count">{counter}%</div>
-      <svg id="animated" width="100" height="100">
+    <div className="controll-button" onClick={onClick}>
+      <svg id="animated" width="40" height="40">
         <circle
           ref={progressRef}
           id="progress"
-          cx="50"
-          cy="50"
-          r="40"
+          cx="20"
+          cy="20"
+          r="18"
           stroke="blue"
-          strokeWidth="5"
+          strokeWidth="2"
           fill="none"
         />
       </svg>
+      {/* <div className="percentage">
+        {percentage}%
+      </div> */}
+      <div className="control">
+        {children}
+      </div>
     </div>
   );
+};
+
+ControllButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  percentage: PropTypes.number.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default ControllButton;
