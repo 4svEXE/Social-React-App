@@ -12,11 +12,14 @@ import pause from "public/img/icons/pause.svg";
 // ! step 1
 import v1 from "public/video/v1.mp4";
 import v2 from "public/video/v2.mp4";
-import v3 from "https://htz-cs16.spac.me/v/044047128193033064221255171190063040231090229011006006168031/1717667526/75963170/x2/7749af7fd1b2731da502664452eec514/file.mp4";
+
 
 export default function VideoGuides() {
   const { t } = useTranslation();
   const [videoSrc, setVideoSrc] = useState("");
+
+  // ! an examle how to add a new video from other server
+  const v3 = "https://htz-cs16.spac.me/v/044047128193033064221255171190063040231090229011006006168031/1717667526/75963170/x2/7749af7fd1b2731da502664452eec514/file.mp4";
 
   // ! Steps to add a new video-conteoller button:
   // ! 1. Add a new video in the videoSrc state
