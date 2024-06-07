@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import s from "./VideoGuides.module.scss";
 
-import VideoCard from "widgets/VideoCard.VideoCard";
+import VideoCard from "widgets/VideoCard/VideoCard";
 
 import phone from "public/img/VideoGuides/phone.png";
 

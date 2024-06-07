@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import s from "./VideoGuides.module.scss";
+import s from "./VideoCard.module.scss";
 
 import ControllButton from "widgets/controllButton";
 
@@ -14,9 +14,21 @@ import pause from "public/img/icons/pause.svg";
 import v1 from "public/video/v1.mp4";
 import v2 from "public/video/v2.mp4";
 
-const VideoCard = ({ src, videoKey, percentages, isPlaying, handleButtonClick, videoRefs, videoSrc }) => {
+export default function VideoCard({
+  src,
+  videoKey,
+  percentages,
+  isPlaying,
+  handleButtonClick,
+  videoRefs,
+  videoSrc,
+}) {
   return (
-    <div className={s.card + " col-span-1 " + (isPlaying[videoKey] ? s.active : "")}>
+    <div
+      className={
+        s.card + " col-span-1 " + (isPlaying[videoKey] ? s.active : "")
+      }
+    >
       <div className={s.controllButton}>
         <ControllButton
           onClick={() => {
@@ -43,4 +55,4 @@ const VideoCard = ({ src, videoKey, percentages, isPlaying, handleButtonClick, v
       ></video>
     </div>
   );
-};
+}
