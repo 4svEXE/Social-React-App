@@ -49,6 +49,10 @@ export default function VideoGuides() {
 
     for (const ref of Object.values(videoRefs)) {
       ref.current.pause();
+
+      if (ref.current !== video) {
+        ref.current.currentTime = 0;
+      }
     }
     if (currentIsPlaying) {
       video.pause();
