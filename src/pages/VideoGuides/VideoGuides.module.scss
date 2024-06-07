@@ -1,10 +1,16 @@
+@import '../../scss/variables.scss';
+
 .cards {
   display: grid;
   height: fit-content;
 
- 
-}
 
+  @media (max-width: $media-laptop) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
 
 .videoContainer {
   position: relative;
@@ -12,6 +18,8 @@
   height: 590px;
   overflow: hidden;
   border-radius: 40px;
+  position: sticky;
+  top: 100px;
 
   .phone {
     width: 100%;

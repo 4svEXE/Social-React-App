@@ -30,6 +30,29 @@ export default function VideoGuides() {
     'https://htz-cs08.spac.me/v/044047128193033064221255171190063040231090229011006006168031/1717761314/75705215/x2/c1cd7c865fa5914518bf8fc339cc1e7d/file.mp4',
   ];
 
+  const cardsContent = [
+    {
+      title: t("videoGuides.cards.card1.title"),
+      description: t("videoGuides.cards.card1.description"),
+    },
+    {
+      title: t("videoGuides.cards.card1.title"),
+      description: t("videoGuides.cards.card1.description"),
+    },
+    {
+      title: t("videoGuides.cards.card1.title"),
+      description: t("videoGuides.cards.card1.description"),
+    },
+    {
+      title: t("videoGuides.cards.card1.title"),
+      description: t("videoGuides.cards.card1.description"),
+    },
+    {
+      title: t("videoGuides.cards.card1.title"),
+      description: t("videoGuides.cards.card1.description"),
+    },
+  ]
+
   useEffect(() => {
     const percentagesObj = {};
     const isPlayingObj = {};
@@ -89,7 +112,7 @@ export default function VideoGuides() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1280);
+      setIsMobile(window.innerWidth < 1025);
     };
     window.addEventListener("resize", handleResize);
     handleResize();
@@ -116,11 +139,11 @@ export default function VideoGuides() {
 
   return (
     <section className="flex pt-10 flex-col h-max items-center bg-[#E2ECF4] text-black dark:text-white dark:bg-black py-8 bg-opacity-25">
-      <div className="w-full grid grid-cols-12 gap-3 min-h-[50vh]">
-        <div className="col-span-12 xl:col-span-8 m-auto">
-          <div className={s.cards + " grid grid-cols-12 md:grid-cols-6 lg:grid-cols-4 xl:grid-cols-2 gap-3"}>
+      <div className="w-full lg:w-[60%] xl:w-full flex gap-3 min-h-[50vh] relative">
+        <div className="w-full lg:w-[45%] xl:w-[80%] m-auto">
+          <div className={s.cards + " flex wrap gap-3 xl:grid xl:grid-cols-2 xl:w-[60%]"}>
 
-            {videos.map((key) => (
+            {videos.map((key, i) => (
               <VideoCard
                 key={key}
                 src={key}
@@ -131,6 +154,7 @@ export default function VideoGuides() {
                 videoRefs={videoRefs}
                 videoSrc={videoSrc}
                 isMobile={isMobile}
+                cardContent={cardsContent[i]}
               />
             ))}
 
@@ -138,7 +162,7 @@ export default function VideoGuides() {
         </div>
 
         {!isMobile && (
-          <div className={s.videoContainer + " col-span-4 hidden xl:block"}>
+          <div className={s.videoContainer + " col-span-4 hidden lg:block"}>
             <img src={phone} alt="phone" className={s.phone} />
 
             {videos.map((key) => (

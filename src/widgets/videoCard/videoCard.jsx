@@ -7,7 +7,6 @@ import ControllButton from "widgets/controllButton";
 import play from "public/img/icons/play.svg";
 import pause from "public/img/icons/pause.svg";
 
-
 export default function VideoCard({
   src,
   percentages,
@@ -17,13 +16,13 @@ export default function VideoCard({
   refs,
   videoSrc,
   isMobile,
+  cardContent,
 }) {
-
-const videoKey = src
+  const videoKey = src;
   return (
     <div
       className={
-        s.card + " col-span-1 " + (isPlaying[videoKey] ? s.active : "")
+        s.card + " lg:cols-span-1 " + (isPlaying[videoKey] ? s.active : "")
       }
     >
       <div className={s.controllButton}>
@@ -46,12 +45,17 @@ const videoKey = src
           ref={refs}
           src={src}
           className={
-            "block xl:hidden mt-12 " +
+            "block lg:hidden mt-12 " +
             (videoSrc === src ? s.show : s.hide) +
             (isPlaying[videoKey] ? "" : " " + s.paused)
           }
         ></video>
       )}
+
+
+        <h6 className="">{cardContent.title}</h6>
+        <p>{cardContent.description}</p>
+
     </div>
   );
 }

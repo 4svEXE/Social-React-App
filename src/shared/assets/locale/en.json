@@ -74,5 +74,13 @@
       "ChatUsOnBlockchain": "Chat us on Blockchain",
       "Copied": "Copied"
     }
+  },
+  "videoGuides": {
+    "cards": {
+      "card1": {
+        "title": "Our Technologys",
+        "description": "Blockchain, React.js, Node.js, MongoDB, Solidity"
+      }
+    }
   }
 }
