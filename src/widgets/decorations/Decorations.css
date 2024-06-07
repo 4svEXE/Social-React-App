@@ -5,6 +5,7 @@
   height: 100vh;
   opacity: 0.5;
   overflow: hidden;
+  pointer-events: none;
 }
 .Decorations img {
   position: absolute;

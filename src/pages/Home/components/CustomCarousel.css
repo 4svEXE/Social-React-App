@@ -1,9 +1,20 @@
 .react-multi-carousel-dot-list {
   position: relative;
-  width: 70%;
-  margin-left: 15%;
-  margin-top: 170px;
+  width: auto;
+  /* margin-left: 15%;
+  margin-top: 170px; */
   overflow: hidden;
+}
+
+.carousel-box {
+  height: 530px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.react-multi-carousel-list {
+  min-height: 320px;
 }
 
 .carousel-button-group {

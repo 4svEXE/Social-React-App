@@ -97,9 +97,12 @@ export default function VideoGuides() {
     <section className="flex pt-10 flex-col h-max items-center bg-[#E2ECF4] text-black dark:text-white dark:bg-black py-8 bg-opacity-25">
       <div className="w-full grid grid-cols-12 gap-3 min-h-[50vh]">
         <div className="col-span-8">
-
-          <div className={s.cards + ' grid grid-cols-2 gap-3'}>
-            <div className={s.card + ' col-span-1 ' + (isPlaying["v1"] ? s.active : '')}>
+          <div className={s.cards + " grid xl:grid-cols-2 gap-3"}>
+            <div
+              className={
+                s.card + " col-span-1 " + (isPlaying["v1"] ? s.active : "")
+              }
+            >
               <div className={s.controllButton}>
                 <ControllButton
                   onClick={() => {
@@ -114,9 +117,23 @@ export default function VideoGuides() {
                   />
                 </ControllButton>
               </div>
+
+              <video
+                ref={videoRefs["v1"]}
+                src={v1}
+                className={
+                  "block xl:hidden mt-12 " +
+                  (videoSrc === v1 ? s.show : s.hide) +
+                  (isPlaying["v1"] ? "" : " " + s.paused)
+                }
+              ></video>
             </div>
 
-            <div className={s.card + ' col-span-1 ' + (isPlaying["v2"] ? s.active : '')}>
+            <div
+              className={
+                s.card + " col-span-1 " + (isPlaying["v2"] ? s.active : "")
+              }
+            >
               <div className={s.controllButton}>
                 <ControllButton
                   onClick={() => {
@@ -133,9 +150,13 @@ export default function VideoGuides() {
               </div>
             </div>
 
-          {/* // ! step 3 */}
+            {/* // ! step 3 */}
 
-            <div className={s.card + ' col-span-1 ' + (isPlaying["v3"] ? s.active : '')}>
+            <div
+              className={
+                s.card + " col-span-1 " + (isPlaying["v3"] ? s.active : "")
+              }
+            >
               <div className={s.controllButton}>
                 <ControllButton
                   onClick={() => {
@@ -154,7 +175,7 @@ export default function VideoGuides() {
           </div>
         </div>
 
-        <div className={s.videoContainer + " col-span-4"}>
+        <div className={s.videoContainer + " col-span-4 hidden xl:block"}>
           <img src={phone} alt="phone" className={s.phone} />
 
           {/* // ! step 4 */}

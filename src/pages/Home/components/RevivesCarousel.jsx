@@ -99,7 +99,7 @@ export default function RevivesCarousel() {
   };
 
   return (
-    <div className="container text-white mb-20">
+    <div className="container carousel-box text-white mb-20">
       <Carousel
         responsive={responsive}
         showDots

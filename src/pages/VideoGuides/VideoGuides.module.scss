@@ -4,7 +4,8 @@
 
   .card {
     width: 320px;
-    height: 240px;
+    min-height: 240px;
+    height: fit-content;
     padding: 16px;
     background-color: #FFFFFF4D;
     border-radius: 16px;
@@ -15,6 +16,21 @@
 
     &.active {
       background-color: #FFFFFF;
+    }
+
+    video{
+      height: 0px;
+      transition: .3s;
+
+      &.show{
+        height: 440px;
+      }
+      &.hide{
+        height: 0px;
+      }
+      &.paused{
+        height: 200px;
+      }
     }
 
     .controllButton {
