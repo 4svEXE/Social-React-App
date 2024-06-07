@@ -1,28 +1,25 @@
-import React, { useState, useRef, useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import React from "react";
 import s from "./VideoCard.module.scss";
 
 import ControllButton from "widgets/controllButton";
-
-import phone from "public/img/VideoGuides/phone.png";
 
 // icons
 import play from "public/img/icons/play.svg";
 import pause from "public/img/icons/pause.svg";
 
-// videos
-import v1 from "public/video/v1.mp4";
-import v2 from "public/video/v2.mp4";
 
 export default function VideoCard({
   src,
-  videoKey,
   percentages,
   isPlaying,
   handleButtonClick,
   videoRefs,
+  refs,
   videoSrc,
+  isMobile,
 }) {
+
+const videoKey = src
   return (
     <div
       className={
@@ -44,15 +41,17 @@ export default function VideoCard({
         </ControllButton>
       </div>
 
-      <video
-        ref={videoRefs[videoKey]}
-        src={src}
-        className={
-          "block xl:hidden mt-12 " +
-          (videoSrc === src ? s.show : s.hide) +
-          (isPlaying[videoKey] ? "" : " " + s.paused)
-        }
-      ></video>
+      {isMobile && (
+        <video
+          ref={refs}
+          src={src}
+          className={
+            "block xl:hidden mt-12 " +
+            (videoSrc === src ? s.show : s.hide) +
+            (isPlaying[videoKey] ? "" : " " + s.paused)
+          }
+        ></video>
+      )}
     </div>
   );
 }

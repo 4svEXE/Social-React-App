@@ -1,5 +1,6 @@
 .card {
-    width: 320px;
+   width: 100%;
+    max-width: 320px;
     min-height: 240px;
     height: fit-content;
     padding: 16px;
@@ -9,6 +10,7 @@
     border: 1px solid #FFFFFF;
     position: relative;
     transition: .3s;
+    margin: auto;
 
     &.active {
         background-color: #FFFFFF;
