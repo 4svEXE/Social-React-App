@@ -25,12 +25,13 @@
       &.show{
         height: 440px;
       }
-      &.hide{
-        height: 0px;
-      }
       &.paused{
         height: 200px;
       }
+      &.hide{
+        height: 0px;
+      }
+      
     }
 
     .controllButton {

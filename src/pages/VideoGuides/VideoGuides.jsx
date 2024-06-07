@@ -18,12 +18,13 @@ import v2 from "public/video/v2.mp4";
 export default function VideoGuides() {
   const { t } = useTranslation();
   const [videoSrc, setVideoSrc] = useState(v1);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1280);
 
-  // ! an examle how to add a new video from other server
+  // ! an example how to add a new video from other server
   const v3 =
     "https://htz-cs16.spac.me/v/044047128193033064221255171190063040231090229011006006168031/1717667526/75963170/x2/7749af7fd1b2731da502664452eec514/file.mp4";
 
-  // ! Steps to add a new video-conteoller button:
+  // ! Steps to add a new video-controller button:
   // ! 1. Add a new video in the videoSrc state
   // ! 2. update states percentages, isPlaying, videoRefs
   // ! 3. add a new button in the handlePlayPause function
@@ -72,7 +73,10 @@ export default function VideoGuides() {
   const handleTimeUpdate = (videoKey) => {
     const video = videoRefs[videoKey].current;
     const percentage = (video.currentTime / video.duration) * 100;
-    setPercentages({ ...percentages, [videoKey]: percentage });
+    setPercentages((prevPercentages) => ({
+      ...prevPercentages,
+      [videoKey]: percentage,
+    }));
   };
 
   const handleButtonClick = (src, videoKey) => {
@@ -94,6 +98,21 @@ export default function VideoGuides() {
           handleTimeUpdate(videoKey)
         );
       }
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1280);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Initial check
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -122,15 +141,17 @@ export default function VideoGuides() {
                 </ControllButton>
               </div>
 
-              <video
-                ref={videoRefs["v1"]}
-                src={v1}
-                className={
-                  "block xl:hidden mt-12 " +
-                  (videoSrc === v1 ? s.show : s.hide) +
-                  (isPlaying["v1"] ? "" : " " + s.paused)
-                }
-              ></video>
+              {isMobile && (
+                <video
+                  ref={videoRefs["v1"]}
+                  src={v1}
+                  className={
+                    "block xl:hidden mt-12 " +
+                    (videoSrc === v1 ? s.show : s.hide) +
+                    (isPlaying["v1"] ? "" : " " + s.paused)
+                  }
+                ></video>
+              )}
             </div>
 
             <div
@@ -152,6 +173,18 @@ export default function VideoGuides() {
                   />
                 </ControllButton>
               </div>
+
+              {isMobile && (
+                <video
+                  ref={videoRefs["v2"]}
+                  src={v2}
+                  className={
+                    "block xl:hidden mt-12 " +
+                    (videoSrc === v2 ? s.show : s.hide) +
+                    (isPlaying["v2"] ? "" : " " + s.paused)
+                  }
+                ></video>
+              )}
             </div>
 
             {/* // ! step 3 */}
@@ -175,30 +208,44 @@ export default function VideoGuides() {
                   />
                 </ControllButton>
               </div>
+
+              {isMobile && (
+                <video
+                  ref={videoRefs["v3"]}
+                  src={v3}
+                  className={
+                    "block xl:hidden mt-12 " +
+                    (videoSrc === v3 ? s.show : s.hide) +
+                    (isPlaying["v3"] ? "" : " " + s.paused)
+                  }
+                ></video>
+              )}
             </div>
           </div>
         </div>
 
-        <div className={s.videoContainer + " col-span-4 hidden xl:block"}>
-          <img src={phone} alt="phone" className={s.phone} />
+        {!isMobile && (
+          <div className={s.videoContainer + " col-span-4 hidden xl:block"}>
+            <img src={phone} alt="phone" className={s.phone} />
 
-          {/* // ! step 4 */}
-          <video
-            ref={videoRefs["v1"]}
-            src={v1}
-            style={{ display: videoSrc === v1 ? "block" : "none" }}
-          ></video>
-          <video
-            ref={videoRefs["v2"]}
-            src={v2}
-            style={{ display: videoSrc === v2 ? "block" : "none" }}
-          ></video>
-          <video
-            ref={videoRefs["v3"]}
-            src={v3}
-            style={{ display: videoSrc === v3 ? "block" : "none" }}
-          ></video>
-        </div>
+            {/* // ! step 4 */}
+            <video
+              ref={videoRefs["v1"]}
+              src={v1}
+              style={{ display: videoSrc === v1 ? "block" : "none" }}
+            ></video>
+            <video
+              ref={videoRefs["v2"]}
+              src={v2}
+              style={{ display: videoSrc === v2 ? "block" : "none" }}
+            ></video>
+            <video
+              ref={videoRefs["v3"]}
+              src={v3}
+              style={{ display: videoSrc === v3 ? "block" : "none" }}
+            ></video>
+          </div>
+        )}
       </div>
     </section>
   );
