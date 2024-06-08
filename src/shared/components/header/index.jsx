@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import Button from "widgets/button";
 import localesHelper from "shared/helpers/localesHelper";
 
-import logo from "public/img/logo.svg";
-import "./header.css";
+import logo from "/img/logo.svg";
+import "./header.scss";
 
 const navigation = [
   {

@@ -8,12 +8,12 @@ import Button from "widgets/button";
 
 import "./CustomCarousel.css";
 
-import img1 from "public/img/home/team/1.png";
-import img2 from "public/img/home/team/2.png";
-import img3 from "public/img/home/team/3.png";
-import img4 from "public/img/home/team/4.png";
-import img5 from "public/img/home/team/5.png";
-import img6 from "public/img/home/team/6.png";
+import img1 from "/img/home/team/1.png";
+import img2 from "/img/home/team/2.png";
+import img3 from "/img/home/team/3.png";
+import img4 from "/img/home/team/4.png";
+import img5 from "/img/home/team/5.png";
+import img6 from "/img/home/team/6.png";
 
 export default function TeamCarousel() {
   const { t } = useTranslation();

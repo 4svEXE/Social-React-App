@@ -1,9 +1,9 @@
 import React from "react";
-import CasesContent from "./Cases/CasesContent";
+import VideoGuides from "./components/video-guides-content";
 import Breadcumbs from "widgets/Breadcrumbs/Breadcumbs";
 import { useTranslation } from "react-i18next";
 
-export default function CasesPage() {
+export default function VideoGuidesPage() {
   const { t } = useTranslation();
 
   const navBreadcumbs = [
@@ -13,14 +13,14 @@ export default function CasesPage() {
     },
     {
       path: "#",
-      title: t([`header.nav.Cases`]),
+      title: t([`header.nav.Guides`]),
     },
   ];
 
   return (
-    <div className=" w-full flex flex-col items-center justify-start bg-white dark:bg-black">
+    <div className=" w-full flex flex-col items-center justify-start bg-[#E2ECF4] dark:bg-black">
       <Breadcumbs nav={navBreadcumbs} />
-      <CasesContent />
+      <VideoGuides />
     </div>
   );
 }

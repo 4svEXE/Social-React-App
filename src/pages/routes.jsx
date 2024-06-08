@@ -1,9 +1,9 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
 
-import HomePage from "./Home";
-import CasesPage from "./Cases";
-import VideoGuides from "./VideoGuides";
+import HomePage from "./Home/Home";
+import CasesPage from "./Cases/Cases";
+import VideoGuides from "./video-guides/video-guides";
 import P404 from "./P404";
 
 const routesMap = [

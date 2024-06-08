@@ -1,10 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import styles from "./CasesContent.module.scss";
+import styles from "./cases-content.module.scss";
 
 import PrimotyButton from "widgets/primotyButton/primotyButton";
-import masd from "public/img/home/MASD.png";
+import masd from "/img/home/MASD.png";
 
 export default function CasesContent() {
   const { t } = useTranslation();

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import "./Cowchain.css";
-import logo from "public/img/logo.svg";
+import logo from "/img/logo.svg";
 
 import Button from 'widgets/primotyButton/primotyButton'
 import CustomCounter from "widgets/customCounter/CustomCounter";

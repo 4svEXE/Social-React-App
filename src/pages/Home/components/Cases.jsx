@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import styles from "./Cases.module.scss";
 
-import masd from "public/img/home/MASD.png";
+import masd from "/img/home/MASD.png";
 import PrimotyButton from "widgets/primotyButton/primotyButton";
 
 function Cases() {

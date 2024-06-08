@@ -4,8 +4,8 @@ import s from "./VideoCard.module.scss";
 import ControllButton from "widgets/controllButton";
 
 // icons
-import play from "public/img/icons/play.svg";
-import pause from "public/img/icons/pause.svg";
+import play from "/img/icons/play.svg";
+import pause from "/img/icons/pause.svg";
 
 export default function VideoCard({
   src,

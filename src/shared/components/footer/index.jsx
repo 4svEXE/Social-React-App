@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import logo from "public/img/logo.svg";
+import logo from "/img/logo.svg";
 import ContactForm from "./ContactForm";
 
 export default function Footer() {

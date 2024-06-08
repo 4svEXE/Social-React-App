@@ -8,9 +8,9 @@ import Button from "widgets/button";
 
 import "./CustomCarousel.css";
 
-import img1 from "public/img/home/revives/1.png";
-import img2 from "public/img/home/revives/2.png";
-import img3 from "public/img/home/revives/3.png";
+import img1 from "/img/home/revives/1.png";
+import img2 from "/img/home/revives/2.png";
+import img3 from "/img/home/revives/3.png";
 
 export default function RevivesCarousel() {
   const { t } = useTranslation();

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import style from "./ContactForm.module.scss";
 import { useTranslation } from "react-i18next";
 
-import mail from "public/img/footer/mail.svg";
-import copy from "public/img/footer/copy.svg";
-import chat from "public/img/footer/chat.svg";
+import mail from "/img/footer/mail.svg";
+import copy from "/img/footer/copy.svg";
+import chat from "/img/footer/chat.svg";
 
 export default function ContactForm() {
   const [state, setState] = useState({ copied: "" });

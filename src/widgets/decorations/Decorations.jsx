@@ -1,11 +1,11 @@
 import React from "react";
 import "./Decorations.css";
 
-import img1 from "public/img/decorations/1.png";
-import img2 from "public/img/decorations/2.png";
-import img3 from "public/img/decorations/3.png";
-import img4 from "public/img/decorations/4.png";
-import img5 from "public/img/decorations/5.png";
+import img1 from "/img/decorations/1.png";
+import img2 from "/img/decorations/2.png";
+import img3 from "/img/decorations/3.png";
+import img4 from "/img/decorations/4.png";
+import img5 from "/img/decorations/5.png";
 
 function Decorations() {
   return (

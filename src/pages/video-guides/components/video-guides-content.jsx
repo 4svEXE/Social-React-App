@@ -1,14 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import s from "./VideoGuides.module.scss";
+
+import s from "./video-guides-content.module.scss";
 
 import VideoCard from "widgets/VideoCard/VideoCard";
 
 import phone from "public/img/VideoGuides/phone.png";
 
 // videos
-import v1 from "public/video/v1.mp4";
-import v2 from "public/video/v2.mp4";
+import v1 from "/video/v1.mp4";
+import v2 from "/video/v2.mp4";
 
 export default function VideoGuides() {
   const { t } = useTranslation();

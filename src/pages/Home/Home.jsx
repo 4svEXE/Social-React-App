@@ -1,10 +1,10 @@
 import React from "react";
-import Cowchain from "./Home/Cowchain";
-import Services from "./Home/Services";
-import Cases from "./Home/Cases";
-import OurTechnology from "./Home/OurTechnology";
-import Team from "./Home/Team";
-import Revives from "./Home/Reviews";
+import Cowchain from "./components/Cowchain";
+import Services from "./components/Services";
+import Cases from "./components/Cases";
+import OurTechnology from "./components/OurTechnology";
+import Team from "./components/Team";
+import Revives from "./components/Reviews";
 import Decorations from "widgets/decorations/Decorations";
 
 export default function HomePage() {

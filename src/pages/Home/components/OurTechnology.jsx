@@ -2,10 +2,10 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import OurTechnologyItem from "./components/OurTechnologyItem";
 
-import ico1 from "public/img/home/services/1.png";
-import ico2 from "public/img/home/services/9.png";
-import ico3 from "public/img/home/services/6.png";
-import ico4 from "public/img/home/services/8.png";
+import ico1 from "/img/home/services/1.png";
+import ico2 from "/img/home/services/9.png";
+import ico3 from "/img/home/services/6.png";
+import ico4 from "/img/home/services/8.png";
 
 export default function OurTechnology() {
   const { t } = useTranslation();

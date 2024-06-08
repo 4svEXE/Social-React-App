@@ -3,15 +3,15 @@ import { useTranslation } from "react-i18next";
 
 import "./Services.scss";
 
-import ico1 from "public/img/home/services/1.png";
-import ico2 from "public/img/home/services/2.png";
-import ico3 from "public/img/home/services/3.png";
-import ico4 from "public/img/home/services/4.png";
-import ico5 from "public/img/home/services/5.png";
-import ico6 from "public/img/home/services/6.png";
-import ico7 from "public/img/home/services/7.png";
-import ico8 from "public/img/home/services/8.png";
-import ico9 from "public/img/home/services/9.png";
+import ico1 from "/img/home/services/1.png";
+import ico2 from "/img/home/services/2.png";
+import ico3 from "/img/home/services/3.png";
+import ico4 from "/img/home/services/4.png";
+import ico5 from "/img/home/services/5.png";
+import ico6 from "/img/home/services/6.png";
+import ico7 from "/img/home/services/7.png";
+import ico8 from "/img/home/services/8.png";
+import ico9 from "/img/home/services/9.png";
 
 import ServiceItem from "./components/ServiceItem";
 

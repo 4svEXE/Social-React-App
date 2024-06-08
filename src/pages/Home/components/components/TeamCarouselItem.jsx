@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./TeamCarouselItem.module.scss";
-import linkedin from "public/img/home/in.png";
+import linkedin from "/img/home/in.png";
 
 export default function TeamCarouselItem(props) {
   const { name = "name", img = "/", position = "", link = "/" } = props;
