@@ -13,7 +13,7 @@ function PrimotyButton(props) {
   const { text = "IM BUTTON", url = "#", active = "" } = props;
 
   return (
-    <a className={"text-white primotyButton " + active} href={url}>
+    <a className={"text-white primotyButton z-5 " + active} href={url}>
       {text}
     </a>
   );

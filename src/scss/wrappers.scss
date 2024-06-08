@@ -4,6 +4,7 @@ section {
     margin: 0 auto;
     padding: 0;
     width: 1100px;
+    z-index: 5;
 
     @media (min-width: $media-desktop) {
         max-width: 1100px;

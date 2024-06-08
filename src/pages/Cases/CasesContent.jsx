@@ -10,7 +10,7 @@ export default function CasesContent() {
   const { t } = useTranslation();
 
   return (
-    <section className="flex pt-10 flex-col h-max items-center bg-white text-black dark:text-white dark:bg-black py-8 bg-opacity-25">
+    <section className="flex pt-10 flex-col h-max items-center bg-white text-black dark:text-white dark:bg-black py-8 z-10">
       <div className="flex flex-col-reverse lg:flex-row container">
         <div className={styles.case + " flex flex-col p-7"}>
           <h3>{t([`homepage.MASDMarketplace`])}</h3>

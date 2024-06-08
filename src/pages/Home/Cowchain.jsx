@@ -4,9 +4,8 @@ import { useTranslation } from "react-i18next";
 import "./Cowchain.css";
 import logo from "public/img/logo.svg";
 
-// import Button from "../../widgets/primotyButton/primotyButton";
+import Button from 'widgets/primotyButton/primotyButton'
 import CustomCounter from "widgets/customCounter/CustomCounter";
-import Button from 'widgets/button'
 
 export default function Cowchain() {
   const { t } = useTranslation();
@@ -25,7 +24,7 @@ export default function Cowchain() {
   window.addEventListener("scroll", toggleVisible);
 
   return (
-    <div className="relative bg-opacity-25 Cowchain1 bg-white-40 flex flex-col text-black content-center items-center justify-center dark:text-white">
+    <section className="relative bg-opacity-25 bg-white-40 flex flex-col text-black content-center items-center justify-center dark:text-white">
       <div className="first-screen-logo flex flex-wrap justify-center items-center">
         <div className="flex flex-wrap justify-center items-center max-w-screen-xl">
           <div className="flex justify-center CowchainLogo ">
@@ -66,6 +65,6 @@ export default function Cowchain() {
         <CustomCounter text={t([`homepage.clients`])} count="20" />
         <CustomCounter text={t([`homepage.projects`])} count="50" />
       </div>
-    </div>
+    </section>
   );
 }

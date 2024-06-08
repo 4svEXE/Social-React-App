@@ -138,7 +138,7 @@ export default function VideoGuides() {
   }, [videoRefs.current]);
 
   return (
-    <section className="flex pt-10 flex-col h-max items-center bg-[#E2ECF4] text-black dark:text-white dark:bg-black py-8 bg-opacity-25">
+    <section className="flex pt-10 flex-col h-max items-center bg-[#E2ECF4] text-black dark:text-white dark:bg-black py-8 z-10">
       <div className="w-full lg:w-[60%] xl:w-full flex gap-3 min-h-[50vh] relative">
         <div className="w-full lg:w-[45%] xl:w-[80%] m-auto">
           <div className={s.cards + " flex wrap gap-3 xl:grid xl:grid-cols-2 xl:w-[60%]"}>
