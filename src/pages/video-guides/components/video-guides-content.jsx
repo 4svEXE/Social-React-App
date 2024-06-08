@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import s from "./video-guides-content.module.scss";
 
-import VideoCard from "widgets/VideoCard/VideoCard";
+import VideoCard from "./components/video-card/video-card";
 
 import phone from "public/img/VideoGuides/phone.png";
 

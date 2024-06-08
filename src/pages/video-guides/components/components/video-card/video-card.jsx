@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./VideoCard.module.scss";
+import s from "./video-card.module.scss";
 
 import ControllButton from "widgets/controllButton";
 
@@ -22,7 +22,7 @@ export default function VideoCard({
   return (
     <div
       className={
-        s.card + " lg:cols-span-1 " + (isPlaying[videoKey] ? s.active : "")
+        s.card + " lg:cols-span-1 dark:text-[#f1f1f1] text-[#0f0f0f] " + (isPlaying[videoKey] ? s.active : "")
       }
     >
       <div className={s.controllButton}>
