@@ -16,7 +16,7 @@ export default function OurTechnology() {
   const tags4 = ["azure", "aws", "gcp"];
 
   return (
-    <div className="bg-opacity-25 flex flex-col items-center dark:bg-black p-1 md:p-20">
+    <section className="bg-opacity-25 flex flex-col items-center dark:bg-black p-1 md:p-20">
       <h2 className="text-black dark:text-white w-max mb-5 md:mb-20">
         {t([`homepage.OurTechnology.title`])}
       </h2>
@@ -47,6 +47,6 @@ export default function OurTechnology() {
           text={t([`homepage.OurTechnology.CloudText`])}
         />
       </div>
-    </div>
+    </section>
   );
 }

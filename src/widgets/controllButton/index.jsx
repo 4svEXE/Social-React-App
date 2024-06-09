@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import './button.css';
+import './button.scss';
 
 const ControllButton = ({ onClick, percentage, children }) => {
   const progressRef = useRef(null);

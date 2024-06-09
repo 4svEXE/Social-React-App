@@ -7,34 +7,38 @@ import localesHelper from "shared/helpers/localesHelper";
 
 import logo from "/img/logo.svg";
 import "./header.scss";
+// if deploy
+const PUBLIC_URL = '/Social-React-App/#'
+// if dev
+// const PUBLIC_URL = '/'
 
 const navigation = [
   {
-    path: "/",
+    path: PUBLIC_URL + "/",
     title: "Home",
   },
   {
-    path: "/#services",
+    path: PUBLIC_URL +  "/#services",
     title: "Services",
   },
   {
-    path: "/#cases",
+    path: PUBLIC_URL +  "/#cases",
     title: "Cases",
   },
   {
-    path: "/#team",
+    path: PUBLIC_URL +  "/#team",
     title: "Team",
   },
   {
-    path: "/#reviews",
+    path: PUBLIC_URL +  "/#reviews",
     title: "Reviews",
   },
   {
-    path: "/#contact",
+    path: PUBLIC_URL +  "/#contact",
     title: "Contact",
   },
   {
-    path: "/video-guides",
+    path: PUBLIC_URL +  "/video-guides",
     title: "Guides",
   },
 ];
@@ -96,9 +100,8 @@ export default function Header({ toggleTheme }) {
         <div className="flex flex-wrap items-center max-w-screen-xl">
           <div className="flex lg:flex-1">
             <a
-              href="/"
               className="flex items-center"
-              onClick={(e) => linkNav(e, "/")}
+              onClick={(e) => linkNav(e, navigation[0].path)}
             >
               <img src={logo} className="mr-3 h-6 sm:h-9" alt="Cowchain Logo" />
               <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
@@ -174,7 +177,7 @@ export default function Header({ toggleTheme }) {
                 className="CROSS-ICON absolute top-0 right-0 px-8 py-8"
                 onClick={() => {
                   setIsNavOpen(false), setDocumentScrolling(true);
-                }} // change isNavOpen state to false to close the menu
+                }}
               >
                 <svg
                   className="h-8 w-8 text-gray-600 dark:text-white"
@@ -191,11 +194,11 @@ export default function Header({ toggleTheme }) {
               </div>
               <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]">
                 {navigation.map((n) => (
-                  <li key={n.title + "_nav_li"} className="p-10">
+                  <li key={n.title + "_nav_li"} className="p-5">
                     <a
                       key={n.title + "_nav"}
                       href={n.path}
-                      onClick={() => setIsNavOpen((prev) => !prev)}
+                      onClick={() => {setIsNavOpen((prev) => !prev), setDocumentScrolling(true)}}
                       className="text-md text-black font-semibold leading-6 dark:before:bg-white dark:text-white header-nav"
                     >
                       {t([`header.nav.${n.title}`, n.title])}

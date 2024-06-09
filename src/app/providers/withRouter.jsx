@@ -1,10 +1,15 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
+import { Provider } from 'react-redux'; // Додай цей імпорт, якщо ще не додав
 
 export default function WithRouter({ children }) {
+  // const PUBLIC_URL = 'https://4svexe.github.io/Social-React-App/'
+  const PUBLIC_URL = '/'
   return (
-    <BrowserRouter basename="/">
+    <HashRouter basename={PUBLIC_URL} >
+
         {children}
-    </BrowserRouter>
+
+    </HashRouter>
   );
 }

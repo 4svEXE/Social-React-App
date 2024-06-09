@@ -12,17 +12,30 @@ export default function HomePage() {
     <div className="w-full flex-col content-center items-center justify-center bg-white dark:bg-editor-dark">
       <Cowchain />
 
-      <Services id="services" />
+      <div id="services">
+        <Services />
+      </div>
 
-      <Cases id="cases" />
+      <Decorations />
 
-      <OurTechnology id="ourTechnology" />
+      <div id="cases">
+        <Cases />
+      </div>
 
-      <Team id="team" />
+      <div id="ourTechnology">
+        <OurTechnology />
+      </div>
 
-      <Revives id="reviews" />
+      <div id="team">
+        <Team />
+      </div>
 
-      <Decorations id="contact" />
+      <div id="reviews">
+        <Revives />
+      </div>
+
+      <div id="contact"></div>
+      
     </div>
   );
 }

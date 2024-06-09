@@ -27,7 +27,7 @@ export default function ButtonToUp() {
     <div className="button-to-up">
       <Button
         onClick={scrollToTop}
-        title="🡱"
+        title="UP"
         className={
           "primotyButton active rounded-xl " +
           (visible ? "inline" : "hidden-btn")

@@ -8,3 +8,6 @@ SCSS, modulle.scss,
 #Start
 yarn install
 yarn run dev
+
+#deploy
+yarn run deploy
